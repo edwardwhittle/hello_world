@@ -1,0 +1,528 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Homework 2 - ESS4100
+\end_layout
+
+\begin_layout Author
+Edward Whittle - #4059767
+\end_layout
+
+\begin_layout Section
+Process Addess Place
+\end_layout
+
+\begin_layout Subsection
+Text Section
+\end_layout
+
+\begin_layout Standard
+CPU instructions - Read Only
+\end_layout
+
+\begin_layout Subsection
+Data Section
+\end_layout
+
+\begin_layout Standard
+The location where read-write data is stored (global and static variables)
+\end_layout
+
+\begin_layout Subsection
+BSS 
+\end_layout
+
+\begin_layout Standard
+Similar to the data section except it stores any variables that are initialised
+ as '0' e.g.
+ 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+static int number;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Heap
+\end_layout
+
+\begin_layout Standard
+An area of the memory used for dynamic memory allocation where blocks of
+ memory are allocated in an arbitrary order
+\end_layout
+
+\begin_layout Subsection
+Stack
+\end_layout
+
+\begin_layout Standard
+A section of the memory used for temporary storage of information such a
+ data local to a function (e.g.
+ local variables)
+\end_layout
+
+\begin_layout Section
+Instruction Level Protection
+\end_layout
+
+\begin_layout Standard
+This application aims to execute the kernel function 'wsrmr' which is the
+ Write to Model Specific Register.
+ This function writes to a Memory Type Range Register (MTRR) which designate
+ different portions of physical address space for different usages.
+ This instruction is executed at the privilege level 0 (kernel level) as
+ it should not be accessed by applications due to security issues.
+ 
+\end_layout
+
+\begin_layout Standard
+The program below aims to execute a command at the user level 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+int main(void) {         
+\end_layout
+
+\begin_layout Plain Layout
+
+	printf("Program Starting
+\backslash
+n");         
+\end_layout
+
+\begin_layout Plain Layout
+
+	asm volatile ("wrmsr");
+\end_layout
+
+\begin_layout Plain Layout
+
+    printf("Program Finished
+\backslash
+n");         
+\end_layout
+
+\begin_layout Plain Layout
+
+	return 0; 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+When this program is compiled and executed in the terminal the following
+ is returned
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Program Starting
+\end_layout
+
+\begin_layout Plain Layout
+
+Segmentation Fault
+\end_layout
+
+\end_inset
+
+This shows that the program starts, however it is killed off by the terminal
+ due to the lack of permissions of the user to execute the 
+\begin_inset Quotes eld
+\end_inset
+
+wrmsr
+\begin_inset Quotes erd
+\end_inset
+
+ command.
+ The same happens when this is executed by the super user.
+\end_layout
+
+\begin_layout Section
+Memory Protection
+\end_layout
+
+\begin_layout Standard
+This application aims to write to the heap segment of the memory, first
+ using the 
+\begin_inset Quotes eld
+\end_inset
+
+malloc
+\begin_inset Quotes erd
+\end_inset
+
+ command and then writing it manually within the application.
+ As only the kernel is able to allocate memory to data, the latter should
+ result in an error.
+\end_layout
+
+\begin_layout Standard
+The program used to execute this is a variation on the 'Hello World' program
+ where the memory location of the string is displayed when the application
+ is run
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <stdio.h> 
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdlib.h> 
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <string.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+static int number; #
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+define HW_STRING "Hello world
+\backslash
+n"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main(int argc, char **argv) { 
+\end_layout
+
+\begin_layout Plain Layout
+
+char *string; 
+\end_layout
+
+\begin_layout Plain Layout
+
+number = 7;
+\end_layout
+
+\begin_layout Plain Layout
+
+string = malloc(strlen(HW_STRING) + 1); 
+\end_layout
+
+\begin_layout Plain Layout
+
+printf("String Virtual Address %lX
+\backslash
+n", (unsigned long) string);
+\end_layout
+
+\begin_layout Plain Layout
+
+strcpy(string, HW_STRING);
+\end_layout
+
+\begin_layout Plain Layout
+
+printf("%s %i
+\backslash
+n", string, number); 
+\end_layout
+
+\begin_layout Plain Layout
+
+return 0; 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ When this application is run, the terminal returns the following
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+String Virtual Address 2049010 
+\end_layout
+
+\begin_layout Plain Layout
+
+Hello world  
+\end_layout
+
+\begin_layout Plain Layout
+
+7 th
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When the application is run again, the terminal returns
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+String Virtual Address 884010 
+\end_layout
+
+\begin_layout Plain Layout
+
+Hello world  
+\end_layout
+
+\begin_layout Plain Layout
+
+7
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The kernel allocates a random segement of the memory for the storage of
+ the string.
+\end_layout
+
+\begin_layout Standard
+The program will now attempt to allocate the memory location manually by
+ replacing the following part of the code
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+string = malloc(strlen(HW_STRING) + 1);         
+\end_layout
+
+\begin_layout Plain Layout
+
+string = 0x22D0010 + string;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When this is executed, the terminal returns
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+String Virtual Address 3EB0020 
+\end_layout
+
+\begin_layout Plain Layout
+
+Segmentation fault 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This segmentation fault indicates the the user doesn't have the permissions
+ to execute this command.
+ Once again, this can only be done at the Ring 0 level, not at the Ring
+ 3 level that the application executes at.
+\end_layout
+
+\begin_layout Section
+Examining the System
+\end_layout
+
+\begin_layout Standard
+Using the portage system the status of the 'glibc' package can be checked
+ using command
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+emerge -s glibc
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The result returns 5 matches, however the only one of concern is the one
+ located in sys-libs/glibc.
+ It states in the search results that the latest version available is installed
+ on the system already, however if the package needed to be installed the
+ command (superuser is required) is
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+emerge -a glibc
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

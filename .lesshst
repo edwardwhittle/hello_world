@@ -1,0 +1,9 @@
+.less-history-file:
+.search
+"-i
+"today
+"boot
+"-b
+"error
+"^invocation
+.shell

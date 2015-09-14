@@ -1,0 +1,204 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Commands Used in GNU/Linux
+\end_layout
+
+\begin_layout Subsection
+Basic Commands
+\end_layout
+
+\begin_layout Itemize
+man: shows the manual for a specific file
+\end_layout
+
+\begin_layout Itemize
+bash: Bourne again shell
+\end_layout
+
+\begin_layout Itemize
+ls: list
+\end_layout
+
+\begin_layout Itemize
+cd: change directory
+\end_layout
+
+\begin_layout Itemize
+rm: remove
+\end_layout
+
+\begin_layout Itemize
+mkdir: make directory
+\end_layout
+
+\begin_layout Itemize
+rmdir: remove directory
+\end_layout
+
+\begin_layout Itemize
+top: show running process
+\end_layout
+
+\begin_layout Itemize
+file: indentify file type
+\end_layout
+
+\begin_layout Itemize
+su: super user (become root user)
+\end_layout
+
+\begin_layout Itemize
+killall -9: kills all applications
+\end_layout
+
+\begin_layout Itemize
+bash_history: displays all commands typed into the terminal
+\end_layout
+
+\begin_layout Itemize
+vi: runs a file
+\end_layout
+
+\begin_layout Itemize
+emerge: Command line interface to the package system
+\end_layout
+
+\begin_layout Itemize
+grep: Searches the named input files for lines containing a match to the
+ given pattern
+\end_layout
+
+\begin_layout Subsection
+Paths
+\end_layout
+
+\begin_layout Standard
+Files locations within the file system can be expressed absolutely or relatively
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+/etc/portage/package.use - absolute path
+\end_layout
+
+\begin_layout Plain Layout
+
+./package.use - relative path
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Text Editing
+\end_layout
+
+\begin_layout Standard
+The text editor used to write C files is the Vi Improved (VIM for short).
+ To launch the 
+\end_layout
+
+\begin_layout Section
+Week 2
+\end_layout
+
+\begin_layout Section
+Week 3
+\end_layout
+
+\begin_layout Section
+Week 4
+\end_layout
+
+\begin_layout Section
+Week 5 - Link Lists
+\end_layout
+
+\begin_layout Standard
+\noindent
+An application was developed to illustrate the use of link lists
+\end_layout
+
+\begin_layout Standard
+\noindent
+The following libraries were included for the commands 
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,1068 @@
+<style type="text/css">
+
+  body {font-family: arial, sans-serif};
+  form {font: 10pt/12pt Arial};
+  input {font: 10pt/12pt Arial};
+  textarea {font: 10pt/12pt Arial}; 
+
+ 
+  a {font: bold 10pt/12pt Arial; color:black;
+     text-decoration:none; }
+ 
+  a:link { text-decoration: none; color:#06c; }
+  a:visited { text-decoration: none ; color:purtple;}
+  a:hover { Arial; text-decoration:none; color:#363492;}
+  
+  .portal-pipe{color:#06c;}
+
+ 
+  
+  em {font:bold 10pt/12pt Arial; background-color:#FFFFCC; color:#0000FF;}
+  
+  b {font: bold 10pt/12pt Arial}
+
+  #current   { font: bold 10pt/12pt Arial;
+          color:black; background-color:white}
+
+  #wait  { font: bold 10pt/12pt Arial;
+          color:black; }
+
+  #greyOut  { font: bold 10pt/12pt Arial;
+          color:#CCCCCC; }
+
+  #yellow  { font: bold 10pt/12pt Arial;
+          color:blue; background-color:#FFFFCC}
+          
+  #yback  {background-color:#FFFFCC}        
+
+  #blue  { font: 10pt/12pt Arial;
+          color:#0066CC; text-align:left}
+          
+  #bblue  { font: bold 10pt/12pt Arial;
+          color:blue; text-align:left}
+
+  #blueRight  { font: 10pt/12pt Arial;
+          color:blue; text-align:right}        
+
+  #blueNormal  { font: 10pt/12pt Arial;
+          color:blue}        
+
+  #vyellow  { font: bold 10pt/12pt Arial;
+          color:#0066CC; background-color:white}
+  
+  #vblue  { font: bold 10pt/12pt Arial;
+          color:#0066CC; background-color:#e8e8e8}
+  
+  #vublue  { font: bold 10pt/12pt Arial;
+          color:#0066CC; background-color:white}
+  
+  #spacer    {font: bold 1pt/1pt Arial; color:#FFDA3B; background-color:#FFDA3B}
+
+  #date    { font: 10pt/12pt Arial;
+          color:black; background-color:white}
+  #date2    { font: 10pt/12pt Arial;
+          color:red; background-color:white}
+  #msg    { font: 10pt/12pt Arial;
+          color:blue; background-color:white}
+  #mail    { font: 8pt/10pt Arial;
+          color:blue}        
+
+  #header  { font: bold 10pt/12pt Arial;
+          color:black; text-align:center}
+
+  #colHdr  { font: 9pt/11pt Arial;
+          color:#666666; text-align:center}
+
+  #rowHdr  { font: 9pt/11pt Arial;
+          color:#666666; text-align:left}
+
+  #greyBoxHdr  { font: bold 10pt/12pt Arial;
+          color:#0066CC; background-color:white; text-align:center}
+
+  #homeHdr  { font: bold 10pt/12pt Arial;
+          color:#0066CC; background-color:white; text-align:left}
+
+  #body  { font: 10pt/12pt Arial;
+          color:black; text-align:center}
+  
+  #reportData  { font: 8pt/10pt Arial;
+          color:black; text-align:left}
+          
+  #smallMsg  { font: 8pt/10pt Arial;
+          color:gray; text-align:center}        
+
+  #smallMsg2  { font: 8pt Arial;
+          color:black; text-align:left}        
+
+  #reportCol  { font: bold 8pt/10pt Arial;
+          color:black; text-align:center}
+ 
+  #data  { font: 10pt/12pt Arial;
+          color:black; text-align:left}
+          
+  #rdata  { font: 10pt/12pt Arial;
+          color:black; text-align:left; background-color:#E8E8E8}        
+
+  #phead  { font: bold 10pt/12pt Arial;
+          color:black; text-align:left}
+          
+  #rhead  { font: bold 10pt/12pt Arial;
+          color:black; text-align:right}
+          
+  #orange  { font: bold 12pt/18pt Arial;
+          color:orange; text-align:right} 
+          
+  #green  { font: bold 12pt/18pt Arial;
+          color:#00FF00; text-align:right}               
+          
+  #aster  { font: bold 14pt/14pt Arial;
+          color:red; }                
+
+  #red  { font: 10pt/12pt Arial;
+          color:red; }
+                
+  #pbody  { font: 10pt/12pt Arial;
+          color:black; text-align:left}
+ 
+  #help  { font: 8pt/10pt Arial;
+          color:black; background-color:#E8E8E8}
+
+  #helpBig  { font: bold 8pt/10pt Arial;
+          color:#0066CC; background-color:#E8E8E8}
+  
+  #copy  { font: 8pt/10pt Arial;
+          color:black; text-align:left }
+
+  #rightNav  { font: 8pt/10pt Arial;
+          color:black; text-align:left }
+
+  #screen { font: 15pt/20pt Arial;
+          color:black; background-color:white; }
+
+  #debug { font: 8pt/10pt Arial;
+          color:black; text-align:center }
+
+  #blueline { font: 6pt/6pt Arial;
+          color:white; text-align:center }
+
+  #text1113  { font: bold 10pt/12pt Arial;
+          color:black; text-align:left}
+
+  #subHdr  { font: bold 10pt/12pt Arial;
+          color:black; text-align:left}
+
+  #lsubHdr  { font: bold 12pt/14pt Arial; 
+        color:black; text-align:left} 
+
+  #rsubHdr  { font: bold 10pt/12pt Arial; 
+        color:black; text-align:right} 
+
+  #pageHdr  { font: bold 10pt/12pt Arial;
+          color:black; text-align:center}
+
+  #bigPageHdr  { font: bold 12pt/13pt Arial;
+          color:black; text-align:center}
+          
+  #bigPageBody  { font: 12pt/13pt Arial;
+          color:black; text-align:center}
+          
+  #homePageHdr  { font: bold 12pt/14pt Arial; 
+        color:#666666; text-align:left} 
+
+
+  A:link.icon {text-decoration: none  ;background-color:white;}
+
+  A:visited.icon {text-decoration: none ;background-color:white;}
+
+  A:hover.icon {text-decoration: none ;background-color:white;}        
+
+  A:link.nav {color: #0066CC; text-decoration: none ; background-color:white; }
+
+  A:visited.nav {color: #0066CC; text-decoration: none ; background-color:white;}
+
+  A:hover.nav {color: #0066CC; text-decoration: underline; background-color:white;} 
+
+  A:link.navbar { color: black; text-decoration: none; background-color:white;}
+
+  A:visited.navbar { color: black; text-decoration: none ; 
+     background-color:#white;}
+
+  A:hover.navbar { color: black; text-decoration: underline; background-color:white;}
+
+  A:link.helpbar { color: #0066CC; text-decoration: none; background-color:white;}
+
+  A:visited.helpbar { color: #0066CC; text-decoration: none ; 
+     background-color:white;}
+
+  A:hover.helpbar { color: #0066CC; text-decoration: underline; 
+                    background-color:white;}
+
+  A:link.none { text-decoration: none  }
+
+  A:visited.none { text-decoration: none }
+
+  A:hover.none { text-decoration: underline }
+  
+  A:link.alt {font: 10pt/12pt Arial; color: blue; text-decoration: none  }
+
+  A:visited.alt {font: 10pt/12pt Arial; color: blue; text-decoration: none }
+
+  A:hover.alt {font: 10pt/12pt Arial; color: blue; text-decoration: underline }
+  
+  A:link.rightNav {font: 8pt/10pt Arial; color: black; text-decoration: none  }
+
+  A:visited.rightNav {font: 8pt/10pt Arial; color: black; text-decoration: none }
+
+  A:hover.rightNav {font: 8pt/10pt Arial; color: black; text-decoration: underline }
+  
+  A:link.alt2 {font: bold 10pt/12pt Arial; color: blue; text-decoration: none  }
+
+  A:visited.alt2 {font: bold 10pt/12pt Arial; color: blue; 
+                  text-decoration: none }
+
+  A:hover.alt2 {font: bold 10pt/12pt Arial; color: blue; 
+                text-decoration: underline }
+  body, td, th {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #000000;
+        margin-top:-10px;
+}
+
+
+  input [type=radio] { font: bold Arial; vertical-align:middle;
+          color:black; background-color:white}
+
+  select  { font: bold Arial; vertical-align:middle;
+          color:black; background-color:white}
+
+.style2 {font-size: 12px}
+.style3 {
+	color: #cc3333;
+	font-weight: bold;
+}
+.style6 {
+	color: #990033;
+	font-weight: bold;
+}
+.style7 {color: #990033}
+/*.errors {font: bold 12pt Arial;color: #ff0000};*/
+.errors {font: bold 12pt Arial !important;color: #ff0000 !important; background-color:#f2dede !important; padding:10px; border: 1px solid #F5A9BC;}
+.style1 {
+        font-size: 1.3em;
+}
+.style2 {
+        font-size: 1.3em;
+        font-weight:bold;
+        font-family: Arial, Helvetica,sans-serif;
+}
+.style4 {
+        font-size: 1.3em;
+        font-weight: bold;
+        font-family: Arial, Helvetica,sans-serif;
+}
+.style5 {
+        font-size: 1em; font-family: Arial, Helvetica,sans-serif; color:#000000;
+}
+.style8 {
+        font-size: 0.9em; font-family: Arial, Helvetica,sans-serif; color:#000000;
+}
+.loginbox {
+        background-color: #d2e3f1;
+        padding: 25px;
+}
+
+.applybox {
+       /* background: #eeeeee url(../../images/background-channel.png);*/
+        padding:  5px 10px 1px 10px;
+}
+.applybox h1{
+padding: 0 0 0 50px;
+}
+input {
+        color:#000;
+        padding:7px;
+        font: normal 1em arial, helvetica, sans-serif;
+        border:1px solid #999;
+}
+
+
+.btn{
+	display:inline-block;
+	margin-bottom:0;
+	font-weight:400;
+	text-align:center;
+	vertical-align:middle;
+	cursor:pointer;
+	background-image:none;
+	border:1px solid transparent;
+	white-space:nowrap;
+	padding:6px 12px;    
+	font-size:16px;
+	line-height:1.42857143;
+/* 	border-radius:4px; */
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none
+}
+#casLoginSubmit.btn{
+	*padding:3px 1px;
+}
+.btn:focus,.btn:active:focus,.btn.active:focus{
+	outline:none
+}
+
+.btn:hover,.btn:focus{
+	color:#333;
+	text-decoration:none
+}
+
+.btn:active,.btn.active{
+	outline:0;
+	background-image:none;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}
+
+.btn-primary{
+	color:#000;
+	background-color:#ffb42d;
+	border-color:#ffb42d;
+	font-weight:bold;
+}
+
+.btn-primary:hover,.btn-primary:focus,.btn-primary:active{
+	color:#000;
+	background-color:#ffb42d;
+	border-color:#ffb42d;
+	text-decoration:underline;
+}
+
+.btn-secondary{
+	background-color: #7fbbea;
+	color:#123955;
+	font-weight:bold;
+}
+.btn-secondary:hover{
+	background-color:#7fbbea;
+	color:#123955;
+	font-weight:bold;
+	text-decoration:underline;
+}
+.btn-back, .btn-continue{
+	color:#ffffff;
+	background-color:#716f6f;
+	border-color:#716f6f;
+	font-weight:bold;
+	padding-left:27px;
+	padding-right:27px;
+}
+.btn-continue:hover{
+	color:#ffffff;	
+	text-decoration:underline;
+}
+.btn-back:hover,.btn-back:focus,.btn-back:active{
+	color:#ffffff;
+	background-color:#716f6f;
+	border-color:#716f6f;
+	text-decoration:underline;
+}
+.fltimageleft {
+        float:left;
+        margin:15px 15px 15px 0;
+}
+#leftcont {
+        color:#000;
+        background-color:#ffffff;
+        padding: 50px;
+        border-right: 1px solid rgb(204, 204, 204);
+}
+#leftcont img {
+        float:left;
+        margin:15px 15px 15px 0;
+}
+#staffleftcont {
+	    color:#000;
+	    background-color:#ffffff;
+	    border-right: 1px solid #CCCCCC;
+	    padding: 50px;
+}
+#staffleftcont img {
+	   margin:15px 15px 15px 0;
+}
+
+
+h1 {
+        font-size:1.5em;
+        font-family: Arial, Helvetica, sans-serif;
+        color:#007ac3;
+        font-weight:bold;
+        padding:5px 0;
+        margin:10px 0;
+}
+.copyright {
+        font-family : Arial, Helvetica, sans-serif;
+        font-size : 1em;
+        color : #0078c1;
+}
+
+
+.footerNav {
+        font-family : Arial, Helvetica, sans-serif;
+        font-size : 1em;
+        color : #0078c1;
+}
+
+/*The following styles applies to CAS LOGIN page*/
+
+#casLeftPane {
+float:left;
+width:40%;
+margin-right:50px;
+}
+#casMiddlePane {
+float:left;
+width:30%;
+margin:0px 2em;
+border-right:1px solid #e8e8e8;
+border-left:1px solid #e8e8e8;
+padding-left:20px;
+padding-right:20px;
+}
+
+#casLoginSubmit{
+
+/* padding-bottom:10px;
+margin:10px 0 12px 0px; */
+}
+
+#casFooterContent{
+margin-left:2%;
+padding:0 0;
+}
+#casClearButton{
+float:left;
+
+}
+
+
+input#casClearSubmit{
+padding:10px 30px;
+background:url(../../images/button_clearform.png) no-repeat;
+*background:url(../../images/button_clearform.png) 0 3px no-repeat;
+border:none;
+
+}
+
+.cas-footer {
+clear:both;
+}
+
+
+/* begin css tabs */
+
+body {
+background: #135894 url(../../images/portalBackground.png) -30px -50px;	
+	}
+
+#casCenterBodyContent{
+background:transparent;
+}
+#casWarningText label{
+color: #fff;
+}
+#content{
+/*color:#fff;*/
+}
+
+#casCenterBodyContent{
+padding:30px 30px 70px 30px;
+}
+.cas-center-body{
+background:#12557D
+}
+
+h1{
+padding: 0 0;
+font-size: 1.1em;		
+}
+
+
+input#casChangePWDSubmit{
+padding:8px 35px;
+background:url(../../images/button_applyfor.png) no-repeat 0 0;
+border:none;
+}
+
+#casWarningText input{
+margin-left:0px;
+}
+#welcomeInstructions .style5{
+font-size:14px;
+}
+
+#casASKVUText{
+margin:10px 0;
+}
+
+#casStaffLoginText h1+p{
+margin:0;
+}
+
+.cas-logo-header{
+	padding-left: 30px;
+padding-top: 30px;
+padding-bottom:30px;
+}
+
+.cas_banner{
+background-color:#123955;
+height:115px;		
+
+}
+.cas_login_header{
+color:#ffffff;
+font-size:52px;
+padding-left: 30px;
+padding-top: 30px;
+}
+#casMyVUlogo{
+
+float:left;
+
+}
+
+#casTabAndWebSearch{
+clear:both;
+margin-left:8em;
+}
+
+.bottom-shadow{
+float:left;
+margin-left:2%;
+margin-top:15px;
+*margin-top:20px;
+}
+.top-shadow{
+clear:both;
+float:left;
+margin-left:2%;
+margin-top:-6px;
+}
+#casStaffLoginText h1{
+margin-bottom:0;
+color:#fff;
+}
+#casStaffLoginText p{
+margin-top:0;
+}
+
+#casASKVUText #blue, #casLoginHelp #blue{
+color:#22F3EF;
+text-decoration:underline;
+}
+
+#casDeliveryOptionsHelp, #casEnterCodeViewHelp{
+	margin-left:10%;
+	margin-top:50px;
+	}
+
+/* For IE */
+input#courseSchorlarSubmit{
+*padding-right:30px;
+*padding-left:0px;
+}
+
+/*
+#casLoginSubmit{
+*padding-top:4px;	
+*padding-right:8px;
+*padding-left:4px;
+}
+*/
+input#casClearSubmit{
+*padding-right:8px;
+*padding-left:8px;
+}
+
+input#casChangePWDSubmit{
+*padding-left:9px;
+*padding-right:9px;
+*padding-top:8px;
+*background:url(../../images/button_applyfor.png) no-repeat 0px 3px;
+}
+.cas-center-body{
+/* clear:both; */
+}
+
+
+
+#usernameLabel, #passwordLabel{
+/* color:black; */
+}
+
+
+
+#passwordLabel{
+margin-right:5px;
+}
+#casUsernameLabelTextInput{
+/* margin-top:10px; */
+}
+
+#logoutText #blue {
+color:#22F3EF;
+}
+
+#logoutHeader h1,#genericSuccessHeader h1,.logout-text, .block-text{
+color:#000000;
+margin-top:10px;
+}
+
+#casRightPaneInner #status.errors{
+	margin-left:63.5%;
+	margin-right:10%;	
+	*margin-left:61.5%;
+	*margin-right:10%;	
+}
+
+
+
+#casUserBlockedBody, #casGenericSuccessBody, #casLogoutBody{
+clear:both;
+padding:10px;
+margin-left:8em;
+}
+
+
+#formWrapper{
+margin-left:10%;
+}
+
+
+#casNoteWrapper{
+position:absolute;
+margin-left:55%;
+margin-top:-19em;
+*margin-top:-22em;           
+}
+#casNoteWrapperPwd{
+position:absolute;
+margin-left:55%;
+margin-top:-18em;
+*margin-top:-21em;           
+}
+.formWrapper {
+width:60%;
+margin-left:10%;
+}
+
+#noteWrapper{
+position:absolute;
+margin-left:55%;
+margin-top:-15em;
+*margin-top:-18em;           
+}
+.cas-change-pwd-title p{
+color:#000;
+padding-top:50px;
+}
+
+.cas-change-pwd-help p{
+color:#000;
+padding-top:1px;
+}
+.cas-change-pwd-title h1{
+color:#000;
+padding-top:10px;
+}
+
+
+span.cas-title{
+	font-size: 25px;
+	font-weight: bold;
+}
+.cas-title{
+	font-size: 25px;
+	font-weight: bold;
+}
+span.cas-title-steps{
+	font-size: 20px;
+}
+.cas-title-steps{
+	font-size: 20px;
+	padding: 10px 0 10px;
+}
+
+#casChangePWDPasswordLabel,#casChangePWDNewPasswordLabel,#casChangePWDConfirmPWDLabel,#noteWrapper,#casNoteWrapper,#casNoteWrapperPwd,#casforgottenPWDEgLabel{
+color:#000;
+}
+#changePWDusernameLabel{
+padding-right:80px;
+}
+/* #casChangePWDPasswordLabel{
+padding-right:31px;
+*padding-right:31px;
+} */
+#casforgottenPWDEgLabel{
+padding-left:31px;
+*padding-left:31px;
+}
+#casChangePWDNewPasswordLabel{
+padding-right:46px;
+*padding-right:48px;
+}
+#casChangePWDConfirmPWDLabel{
+	padding-right:5px;
+}
+#casChangePWDConfirmPWDLabelTextInput,#casChangePWDNewPWDLabelTextInput,#casChangePWDPasswordLabelTextInput{
+margin-bottom:8px;
+
+}
+
+#casChangeRoleBody h1{
+padding-top:20px;
+padding-bottom:20px;
+color:white;
+}
+#usernameText1 {
+margin-left:50px;
+}
+#casChangeRoleLabelSelectBox{
+margin-bottom:10px;
+margin-top:10px;
+}
+
+.block-text h1{
+color:#000;
+}
+#casPageCopyright{
+padding-left:15px;
+}
+
+#casWarningText{
+display:none;
+}
+
+#casAskvuLogo{
+margin-top:20px;
+}
+
+#casLeftText{
+padding-left:45px;
+}
+
+.casQuestionUsernameDisplay {
+  margin-bottom: 15px;
+}
+
+.casQuestionDiv {
+  color: #000;  
+}
+
+.casAnswerDiv {
+  margin-bottom: 15px;
+}
+
+.tooltip-content {
+  background:transparent url(../../images/tooltip-bg.png) repeat scroll 0 0;
+  color:#EEEEEE;
+  display:none;
+  font-size:12px;
+  font-weight:bold;
+  height:100px;
+  letter-spacing:1px;
+  margin-left:-20px;
+  margin-top:-128px;
+  padding:14px 20px;
+  position:absolute;
+  width:180px;
+}
+
+#forgetYourPasswordLink .vu-blue-link {
+color:#0066cc;
+}
+#forgetYourPasswordLink:hover .vu-blue-link {
+color:#363492;
+border-bottom:1px solid #363492;
+}
+
+a.return-to-login{
+text-decoration:none;
+}
+
+#casPageBody{
+width:978px;
+margin:10px auto;
+background-color:white;
+}
+/* To force indent in list item in the right column*/
+#casRightPaneInner ul li{
+/* margin-left:630px; */
+}
+
+#welcomeInstructions{
+padding-top: 15px;
+}
+#casRightPaneInner h2#casMyVULoginLogo {
+	*margin-top:-2px
+	}
+#casChangePWDNewPasswordLabel{
+    *padding-right:48px;
+}
+#casRightPane #casApplyForScholar{
+margin-left:640px;
+*margin-left:610px;
+	}
+
+#casChangePWDUsernameDisplay{
+margin: 20px 0; 
+}
+.btnsGroup input{
+margin:15px 30px 0 0;
+*margin:15px 15px 0 0;
+}
+
+div.note{
+padding-top:30px;
+*padding-top:15px;
+margin-left:100px;
+color:white;
+}
+
+.smsMessage{
+margin-top:30px;
+margin-bottom:20px;
+padding-top:15px;
+color:#FFF;
+border-top:1px solid #498AC4;
+}
+a.askvuLink {
+color:#0066cc;
+/* border-bottom:1px solid #999999; */
+}
+
+a.askvuLink:after{
+ content:  url("../../images/extlink.png");
+    padding-left: 4px;
+    margin-right: 0px;
+    white-space: nowrap;
+}
+
+
+
+a:hover.askvuLink {
+color:#363492;
+border-bottom:1px solid #363492;
+}
+
+#usernameTextInput, #passwordTextInput{
+	margin:8px 0;
+}
+
+#casResetPasswordButtonsGroup{
+padding-left:135px;
+*padding-left:142px;
+}
+
+ul.casForgottenPwdOption{
+	padding-left: 5px;
+	*padding-left: 5px;
+	margin-left:10px;
+	
+}
+/*Style for "Student login" and "Staff login" text in the middle and right column*/
+.title_text{
+font-size:18px;
+font-weight:bold;
+}
+
+/* Position for "Student login"*/
+.cas-middle-pane{
+padding-top:15px;
+}
+/* Position for "Staff login"*/
+.cas-right-pane-body{
+margin-left:360px;
+margin-top:-10px;
+}
+
+h2{
+	color:black;
+}
+#casRightPaneInner{
+/* margin-top:-75px */
+}
+
+#casFooterContent{
+	width:982px;
+	margin:20px auto;
+}
+
+.form-box{
+background-color:#EFEFEF;
+border:1px solid #cccccc;
+}
+.clear-both{
+	clear:both;
+}
+h2{
+margin-top:0;
+}
+h3{margin:0px;}
+.padding15{
+	padding:0 15px;
+}
+.padding10{
+	padding:10px;
+}
+
+.padding-left-right10{
+    padding-left:10px;
+    padding-right:10px;	
+}
+.padding-bottom5{
+	padding-bottom:5px;
+}
+.padding-bottom20{
+	padding-bottom:20px;
+}
+.blueBg{
+	background-color: rgb(0, 159, 217);
+	color: white;
+	padding: 10px;
+	font-size: 24px;
+}
+#casButtonsGroup{
+position:relative;
+}
+#twobuttongroup{
+position:absolute;
+left:95px;
+top:10px;
+}
+
+#casLoginHelp{
+margin-left:15px;
+margin-bottom:15px;
+}
+.info_box{
+background-color:#ffffe6;
+border:1px solid #cccccc;
+margin: 0 0 50px 35px;
+padding:15px 20px;
+}
+
+.info_box1 {
+background-color: #ffffe6;
+border: 1px solid #cccccc;
+margin: 30px 30px 0px 35px;
+/* padding: 15px 20px; */
+}
+
+#forgetYourPasswordLink:after{
+ content:  url("../../images/extlink.png");
+    padding-left: 4px;
+    margin-right: 0px;
+    white-space: nowrap;
+}
+.red-font{
+	color:red;
+}
+.center{
+	text-align:center;
+}
+.ftlink{
+	padding-left:20px;
+}
+.margin10{
+	margin:10px 0;
+}
+.margin-top10{
+	margin-top:10px;
+}
+.margin-bottom10{
+	margin-bottom:10px;
+}
+.margin-top15bottom35{
+	margin-top:15px;
+	margin-bottom:35px;
+}
+.margin15{
+	margin-bottom:15px;
+}
+.margin20{
+	margin:20px;
+}
+.margin-bottom35{
+	margin-bottom:35px;
+}
+
+.left_pane{
+	float:left;
+	width:410px;	
+}
+.left_pane380{
+	float:left;
+	width:380px;	
+}
+.left_pane600{
+	float:left;
+	width:600px;	
+}
+.left_pane650{
+	float:left;
+	width:650px;	
+}
+.right_pane{
+	margin-left:440px;	
+}
+.text-focus{
+	background-color:#d8edf7;
+}
+
+.forget-form-box {
+background-color: #EFEFEF;
+border: 1px solid #cccccc;
+margin-left: 30px;
+margin-top: 30px;
+margin-bottom: 30px
+}
+
+.btn-link{
+	color: #0066cc;
+	cursor: pointer;
+	border-radius: 0;
+	border-color: transparent;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	margin-right: 12px;
+	background-color: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.btn-link:hover{
+	color:#363492;
+	border-bottom: 1px solid #363492;
+}
+.fg-pwd-inst{
+	padding: 3px 20px;	
+	margin-bottom: 20px;
+	margin-top: 14px;	
+}
+.font12{
+	font-size:12px;
+}
+.width600{
+	width:600px;
+}
+a.portal_link{
+	color:#ffffff;
+}
+input[type=radio]{
+	border:none;
+}
+</style>

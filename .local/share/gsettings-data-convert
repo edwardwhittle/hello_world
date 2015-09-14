@@ -1,0 +1,3 @@
+[State]
+timestamp=1436538654
+converted=ibus.convert;org.gnome.seahorse.convert;nautilus.convert;gedit.convert;pythonconsole.convert;org.gnome.seahorse.manager.convert;eog.convert;brasero.convert;opensubtitles.convert;mutter-schemas.convert;folks.convert;gsettings-desktop-schemas.convert;totem.convert;evolution-data-server.convert;nm-applet.convert;gnome-shell-overrides.convert;evince.convert;gnome-session.convert;gnome-settings-daemon.convert;org.gnome.crypto.pgp_keyservers.convert;org.gnome.crypto.cache.convert;libgnomekbd.convert;org.gnome.crypto.pgp.convert;wm-schemas.convert;

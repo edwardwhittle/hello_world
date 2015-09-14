@@ -1,0 +1,2078 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Week 1
+\end_layout
+
+\begin_layout Subsection
+Operating System/Kernel Responsibilities
+\end_layout
+
+\begin_layout Itemize
+Hardware Abstraction: Allows desktop applications to use the hardware of
+ the computer system using an application programming interface (API) regardless
+ of the make of hardware.
+ For example, a Seagate hard drive and Western Digital hard drive are both
+ seen by the application as a storage device with the same function.
+\end_layout
+
+\begin_layout Itemize
+Scheduling: Allowing time for an application to run on a processor
+\end_layout
+
+\begin_layout Itemize
+Interprocess Communication (IPC): Allow communication between two applications
+ which occurs through the kernel.
+ Applications cannot directly communicate with each other
+\end_layout
+
+\begin_layout Itemize
+Memory Management: The kernel will allocate memory for each application
+ to avoid conflict between two applications trying to use the same memory
+ address
+\end_layout
+
+\begin_layout Itemize
+File System: A storage device is defined as a particular type of file system
+ (e.g.
+ NTFS, FAT32) in which the kernel will control how files are read and written
+\end_layout
+
+\begin_layout Itemize
+Initialisation: Commencing the operation of an application
+\end_layout
+
+\begin_layout Itemize
+Security: Kernel encrypts and decrypts data for security
+\end_layout
+
+\begin_layout Itemize
+Daemons: Applications that run all the time (called processes in Windows
+ environment)
+\end_layout
+
+\begin_layout Subsection
+Unix File System Heirachy (FHS)
+\end_layout
+
+\begin_layout Standard
+Unlike the Windows File system, the Unix file system stores the files according
+ to the type of file instead of what application the file belongs to.
+ For example, Microsoft Office can usually be found at C:/Program Files/Office
+ which will contain the executable file for the program as well as manuals
+ for the program.
+ In the Unix filesystem the executable file would be found in the /opt directory
+ and the readme would be found in the /usr/share/man directory.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The following directories can be found in the Unix file system
+\end_layout
+
+\begin_layout Itemize
+/bin: Essential binaries - files read by the CPU
+\end_layout
+
+\begin_layout Itemize
+/boot: Boot file used to initialise the syste.
+\end_layout
+
+\begin_layout Itemize
+/dev: Device files used to allow applications to access to hardware components
+\end_layout
+
+\begin_layout Itemize
+/etc: Files that can be edited by user to configure the system
+\end_layout
+
+\begin_layout Itemize
+/home: Home folders for user to store files
+\end_layout
+
+\begin_layout Itemize
+/lib32 & /lib64: Library binaries
+\end_layout
+
+\begin_layout Itemize
+/media: Removable media such as CD-ROM and floppy drives can be found here:
+ 
+\end_layout
+
+\begin_layout Itemize
+/mnt: Directory for mounted file systems
+\end_layout
+
+\begin_layout Itemize
+/opt: Directory for 3rd party software
+\end_layout
+
+\begin_layout Itemize
+/proc: Contains information about the kernel processes
+\end_layout
+
+\begin_layout Itemize
+/root: Root user's home folder
+\end_layout
+
+\begin_layout Itemize
+/sbin: Contains root user binary files
+\end_layout
+
+\begin_layout Itemize
+/sys: Contains information about the hardware, seen as files by the kernel
+\end_layout
+
+\begin_layout Itemize
+/temp: Storage for temporary files which are cleared each time the system
+ boots
+\end_layout
+
+\begin_layout Itemize
+/usr: Contains all installed packages
+\end_layout
+
+\begin_layout Itemize
+/var: Contains system files such as logs, caches, mail directories, print
+ spool etc.
+\end_layout
+
+\begin_layout Subsection
+Basic Commands
+\end_layout
+
+\begin_layout Itemize
+man: shows the manual for a specific command
+\end_layout
+
+\begin_layout Itemize
+ls: list all files in a directory
+\end_layout
+
+\begin_layout Itemize
+cd: change directory
+\end_layout
+
+\begin_layout Itemize
+rm: remove file
+\end_layout
+
+\begin_layout Itemize
+mkdir: make directory
+\end_layout
+
+\begin_layout Itemize
+rmdir: remove directory
+\end_layout
+
+\begin_layout Itemize
+top: show running process
+\end_layout
+
+\begin_layout Itemize
+file: indentify file type
+\end_layout
+
+\begin_layout Itemize
+su: super user (become root user)
+\end_layout
+
+\begin_layout Itemize
+killall -9: kills all applications
+\end_layout
+
+\begin_layout Itemize
+bash_history: displays all commands typed into the terminal
+\end_layout
+
+\begin_layout Itemize
+vi: opens VIM (text editor)
+\end_layout
+
+\begin_layout Itemize
+emerge: Command line interface to the package system
+\end_layout
+
+\begin_layout Itemize
+grep: Searches the named input files for lines containing a match to the
+ given pattern
+\end_layout
+
+\begin_layout Subsection
+Paths
+\end_layout
+
+\begin_layout Standard
+Files locations within the file system can be expressed absolutely or relatively
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+/etc/portage/package.use - absolute path
+\end_layout
+
+\begin_layout Plain Layout
+
+./package.use - relative path
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Text Editing
+\end_layout
+
+\begin_layout Standard
+The text editor used to write C files is the Vi Improved (VIM for short).
+ To launch the application the command is 'vi'.
+ 
+\end_layout
+
+\begin_layout Subsection
+Package Management
+\end_layout
+
+\begin_layout Standard
+In Linux systems a
+\end_layout
+
+\begin_layout Section
+\noindent
+Week 2
+\end_layout
+
+\begin_layout Subsection
+GCC Compiler
+\end_layout
+
+\begin_layout Standard
+To turn C programs written in VIM into executable applications in Linux
+ the GNU project C compiler is used.
+ To launch this application the command 'gcc' is used.
+ This application does the preprocessing, compiliation, assembly and linking.
+ 
+\end_layout
+
+\begin_layout Subsection
+Hello World Application
+\end_layout
+
+\begin_layout Standard
+To practice using the gcc compiler a simple 
+\begin_inset Quotes eld
+\end_inset
+
+hello world
+\begin_inset Quotes erd
+\end_inset
+
+ script was written
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+int main(int argc, char **argv){
+\end_layout
+
+\begin_layout Plain Layout
+
+	printf("Hello World
+\backslash
+n");	
+\end_layout
+
+\begin_layout Plain Layout
+
+	return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+To compile this programing using the gcc compiler, the follow command was
+ written into the terminal
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+gcc -Wall helloworld.c -o helloworld
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Where 'gcc' is the application, '-Wall' means to display all warnings, helloworl
+d.c is the file name of the script, '-o' is the output file specifier in
+ which helloworld will be the name of the executable file.
+\end_layout
+
+\begin_layout Subsection
+Application Interaction with Kernel
+\end_layout
+
+\begin_layout Standard
+As stated in Week 1, applications do not have direct access to hardware
+ modules or other applications.
+ For example, the 'printf' command does not operate by allowing the application
+ direct access to the output, rather it is triggered by a set of commands
+ 
+\end_layout
+
+\begin_layout Section
+Week 3
+\end_layout
+
+\begin_layout Subsection
+GitHub
+\end_layout
+
+\begin_layout Standard
+GitHub is an online repository hosting service used from source code management
+ and version control.
+ It allows users to manage projects worked on by many software developers
+ by tracking changes to projects to identify bugs.
+ A repository was created from all works completed for this subject under
+ the user 'edward.whittle'
+\end_layout
+
+\begin_layout Subsection
+Creating a Repository
+\end_layout
+
+\begin_layout Section
+Week 4
+\end_layout
+
+\begin_layout Section
+Week 5 - Linked Lists
+\end_layout
+
+\begin_layout Standard
+\noindent
+An application was developed to illustrate the use of linked lists.
+ A linked list is a dynamic data structure whose length is defined (unlike
+ an array which has a defined length).
+ The memory blocks in the linked list are in random memory locations and
+ are connected using pointers which contain the address for the next memory
+ block.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The following libraries were included for the commands
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+<stdio.h> - For printf, scanf and fprintf
+\end_layout
+
+\begin_layout Plain Layout
+
+<stdlib.h> - For free, malloc
+\end_layout
+
+\begin_layout Plain Layout
+
+<string.h> - For strdup
+\end_layout
+
+\begin_layout Plain Layout
+
+<getopt.h> - For long_options, required_arguement, opt_arg
+\end_layout
+
+\end_inset
+
+At the beginning of the program file the 'typedef' function was used to
+ declare the structure 'word_object' which is how linked list nodes are
+ defined
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+typedef struct s_word_object word_object
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The structure 's_word_object' is a block containing a 'char' type variable
+ and a pointer *next contains the address of the next node.
+ The structure is defined in a recursive manner
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct s_word_object{        
+\end_layout
+
+\begin_layout Plain Layout
+
+	char *word;         
+\end_layout
+
+\begin_layout Plain Layout
+
+	word_object *next; 
+\end_layout
+
+\begin_layout Plain Layout
+
+}; 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+A static variable called 'list_head' is defined which will point to the
+ first item on the list.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+static word_object *list_head;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+To add words to the list a function called 'add_to_list' is created which
+ will input the data from stored at the address 'word'
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+static void add_to_list(char *word)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+To store the memory location of the last word another node is created called
+ 'last_object'
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+word_object *last_object
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+An 'if' statement is then used to check whether the address of the first
+ item on the list is 'NULL'.
+ If this is the case then a dummy address is created for the node then the
+ address of list_head is stored into last_object.
+ In doing so when the memory allocation is 'freed' then both of the nodes
+ have the addresses unallocated.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+if (list_head == NULL){
+\end_layout
+
+\begin_layout Plain Layout
+
+	last_object = malloc(sizeof(word_object));
+\end_layout
+
+\begin_layout Plain Layout
+
+  	list_head = last_object;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+If there is an address in list_head (an input from the scanf function) then
+ this becomes the last_object and the address of the next node is generated
+ for the next iteraton of the function.
+ This next address will be stored in the list_head and the process will
+ be repeated.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+else {
+\end_layout
+
+\begin_layout Plain Layout
+
+	last_object = list_head;
+\end_layout
+
+\begin_layout Plain Layout
+
+	while(last_object->next){
+\end_layout
+
+\begin_layout Plain Layout
+
+		last_object = last_object->next;
+\end_layout
+
+\begin_layout Plain Layout
+
+    	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	last_object->next = malloc(sizeof(word_object));
+\end_layout
+
+\begin_layout Plain Layout
+
+	last_object = last_object->next;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Once the next object have been
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ last_object->word = strdup(word);
+\end_layout
+
+\begin_layout Plain Layout
+
+ last_object->next = NULL;
+\end_layout
+
+\end_inset
+
+A function is created caled 
+\begin_inset Quotes eld
+\end_inset
+
+print and free
+\begin_inset Quotes erd
+\end_inset
+
+ which is an iterative process which will print the input words and free
+ the allocated memory.
+ The current_object pointer is used to 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+void print_and_free(void){
+\end_layout
+
+\begin_layout Plain Layout
+
+	word_object *current_object;
+\end_layout
+
+\begin_layout Plain Layout
+
+	word_object *old_object;
+\end_layout
+
+\begin_layout Plain Layout
+
+	current_object = list_head;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	while(1){                
+\end_layout
+
+\begin_layout Plain Layout
+
+		printf("%s
+\backslash
+n", current_object->word);
+\end_layout
+
+\begin_layout Plain Layout
+
+		free(current_object->word);                 
+\end_layout
+
+\begin_layout Plain Layout
+
+		old_object = current_object;
+\end_layout
+
+\begin_layout Plain Layout
+
+        if(current_object->next){                         
+\end_layout
+
+\begin_layout Plain Layout
+
+			current_object = current_object->next;                         
+\end_layout
+
+\begin_layout Plain Layout
+
+			free(old_object);                 
+\end_layout
+
+\begin_layout Plain Layout
+
+		}                 
+\end_layout
+
+\begin_layout Plain Layout
+
+		else{                         
+\end_layout
+
+\begin_layout Plain Layout
+
+			free(old_object);                         
+\end_layout
+
+\begin_layout Plain Layout
+
+			break;                 
+\end_layout
+
+\begin_layout Plain Layout
+
+		}         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The main function takes two inputs into the application by using the 'getopt_lon
+g' function.
+ The main function has the capabilities to parse more than one arguement.
+ However this application will only parse the function 'c' which provides
+ the 'count' option.
+ This 'count' option allows the user to specify how many strings will be
+ saved and printed.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+int main(int argc, char **argv) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        char input_word[256];
+\end_layout
+
+\begin_layout Plain Layout
+
+        int c;
+\end_layout
+
+\begin_layout Plain Layout
+
+        int option_index = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+        int count = -1;
+\end_layout
+
+\begin_layout Plain Layout
+
+        static struct option long_options[] = {
+\end_layout
+
+\begin_layout Plain Layout
+
+                {"count",  required_argument, 0, 'c'},
+\end_layout
+
+\begin_layout Plain Layout
+
+                {0,         0,                 0,  0 }
+\end_layout
+
+\begin_layout Plain Layout
+
+        };
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+The getopt_long function will search through the options until it is correctly
+ found.
+ If an option is found then getopt_long returns -1.
+ A blocking statement using the if command waits for the return of '-1'
+ before preceeding.
+ As the arguement parsed through the main function is 'c', the switch statement
+ goes to case 'c' where the string passed through the main function is converted
+ into an integer using the 'atoi' function and stored into the variable
+ 'count'.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+while(1){
+\end_layout
+
+\begin_layout Plain Layout
+
+                c = getopt_long(argc, argv, "c:", long_options, &option_index);
+\end_layout
+
+\begin_layout Plain Layout
+
+                if(c==-1){break;}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                switch(c){
+\end_layout
+
+\begin_layout Plain Layout
+
+                case'c':
+\end_layout
+
+\begin_layout Plain Layout
+
+                        count = atoi(optarg);
+\end_layout
+
+\begin_layout Plain Layout
+
+                        break;
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The text is printed using the 'fprintf' into the 'stderr' output which infoms
+ the user as to how many strings will be printed 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+fprintf(stderr, "Accepting %i input strings
+\backslash
+n",count);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using in the 'scanf' function the input word is passed into the add_to_list
+ function.
+ This is repeated until the value of end of file is reached.
+ When this occurs it breaks out of the while loop.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+while(scanf("%256s", input_word) != EOF){
+\end_layout
+
+\begin_layout Plain Layout
+
+                add_to_list(input_word);
+\end_layout
+
+\begin_layout Plain Layout
+
+                if (!--count) break;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Once the end of file is reached, the print_and_free function is executed
+ which will print input words and free the allocated memory.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+print_and_free();
+\end_layout
+
+\begin_layout Plain Layout
+
+        return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The when the application is run with 3 strings accepted and the inputs as
+ 
+\begin_inset Quotes eld
+\end_inset
+
+first
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+second
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+third
+\begin_inset Quotes erd
+\end_inset
+
+ the terminal prints
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+init_user@gentoo-usb ~/link $ ./hello_world -c 3
+\end_layout
+
+\begin_layout Plain Layout
+
+Accepting 3 input strings
+\end_layout
+
+\begin_layout Plain Layout
+
+first
+\end_layout
+
+\begin_layout Plain Layout
+
+second
+\end_layout
+
+\begin_layout Plain Layout
+
+third
+\end_layout
+
+\begin_layout Plain Layout
+
+first
+\end_layout
+
+\begin_layout Plain Layout
+
+second
+\end_layout
+
+\begin_layout Plain Layout
+
+third
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Threading
+\end_layout
+
+\begin_layout Subsection
+Introduction to Threadings
+\end_layout
+
+\begin_layout Standard
+The purpose of threading is to use the CPUs multi-threading capabilties
+ so that the mutliple cores of the processor can be executing tasks simultaneous
+ly which will speed up the execution of the application.
+ By splitting the a program into threads, each thread acts like its own
+ individual program except they work in the same shared memory space.
+ This makes communication between threads easy and each a halt in one thread
+ will not impact on the other threads performing tasks.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+In this exercise the linked list application developed in Week 5 is edited
+ to use threading.
+\end_layout
+
+\begin_layout Subsection
+Library for Threading
+\end_layout
+
+\begin_layout Standard
+The header file used for threading is <pthread.h> which includes the following
+ functions used in the program
+\end_layout
+
+\begin_layout Itemize
+PTHREAD_MUTEX_INITIALIZER
+\end_layout
+
+\begin_layout Itemize
+PTHREAD_COND_INITALIZER
+\end_layout
+
+\begin_layout Standard
+The purpose of these functions are to create mutexes for the application.
+ A mutex is like a lock which protects memory from being modified by other
+ threads which may cause crashes to the application or system.
+ The mutexes created for these application are
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+pthread_mutex_t list_lock = PTHREAD_MUTEX_INITIALIZER;  
+\end_layout
+
+\begin_layout Plain Layout
+
+pthread_cond_t  list_data_ready = PTHREAD_COND_INITIALIZER; 
+\end_layout
+
+\begin_layout Plain Layout
+
+pthread_cond_t  list_data_flush = PTHREAD_COND_INITIALIZER; 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+For this program it is to imperative that the list is locked at times to
+ ensure that multiple threads do not perform functions simultaneously on
+ the list (e.g.
+ one thread reading and another deleting a node).
+\end_layout
+
+\begin_layout Subsection
+Editing the 'add_to_list' Function Call
+\end_layout
+
+\begin_layout Standard
+In the original linked list application there was no list locking mechanism.
+ As list locking depends on the blocking functions use (e.g.
+ malloc, strdup) the code needs to be rearranged.
+ This needs to be done because blocking functions can remove the thread
+ from the scheduler so should never been called with lock.
+ Firstly a new variable with the 'word_object' type is created called tmp_object
+ which will be used to allocate memory for the next object.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+word_object *last_object, *tmp_object;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Next the blocking functions are taken outside of the if/else statement and
+ temporary variables are created.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+char *tmp_string = strdup(word);         
+\end_layout
+
+\begin_layout Plain Layout
+
+tmp_object = malloc(sizeof(word_object)); 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Then the lock is put on to prevent changes to the memory locations of the
+ list while this function is performing its operations
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+pthread_mutex_lock(&list_lock);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Firstly consider the scenario where there is no next object (i.e list_head
+ has no value).
+ The list head points to the last object and the list is unlocked.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+if (list_head == NULL){                 
+\end_layout
+
+\begin_layout Plain Layout
+
+	last_object = tmp_object;                 
+\end_layout
+
+\begin_layout Plain Layout
+
+	list_head = last_object;                           
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_unlock(&list_lock);         
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+If there is a next object then the pointer to that object is created and
+ awaits the next value of the pointer in the list head.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+else {              
+\end_layout
+
+\begin_layout Plain Layout
+
+	last_object = list_head;                 
+\end_layout
+
+\begin_layout Plain Layout
+
+	while(last_object->next){                         
+\end_layout
+
+\begin_layout Plain Layout
+
+		last_obe ject = last_object->next;                 
+\end_layout
+
+\begin_layout Plain Layout
+
+	}                 
+\end_layout
+
+\begin_layout Plain Layout
+
+	last_object->next = tmp_object;                 
+\end_layout
+
+\begin_layout Plain Layout
+
+	last_object = last_object->next;         
+\end_layout
+
+\begin_layout Plain Layout
+
+}         
+\end_layout
+
+\begin_layout Plain Layout
+
+last_object->word = tmp_string;         
+\end_layout
+
+\begin_layout Plain Layout
+
+last_object->next = NULL;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+After the list operations have been completed the list is unlocked and a
+ signal is sent out stating there is data ready for printing.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+pthread_mutex_unlock(&list_lock);         
+\end_layout
+
+\begin_layout Plain Layout
+
+pthread_cond_signal(&list_data_ready); 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Main Function
+\end_layout
+
+\begin_layout Standard
+In order to explain the other functions used in the application, the edits
+ made to the main program need to be explained.
+ The print and free function from the linked list application has been replaced
+ with another function called 'print_func'.
+ This function is called using the pthread_create command in which a new
+ thread is started, calling the function 'print_func' with a pointer to
+ the thread stored in the stack (&print_thread).
+ The NULL arguments passed through the command specify that the thread is
+ created with default attributes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+pthread_create(&print_thread, NULL, print_func, NULL);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The 'print_func' function's purpose is to gather the first object from the
+ linked list by calling the function 'list_get_first', printing this string
+ and then freeing the memory space once the string has been printed.
+ The function awaits the signal from the 'add_to_list' function to indicate
+ there is data using the 'pthread_cond_wait' command.
+ This command are used to block on the condition of the mutex and atomically
+ releases the mutex.
+ After this the mutex is locked and is owned by the calling thread.
+ The 'return arg' command has no purpose except to stop the warning from
+ the compiler.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+static void *print_func(void *arg){         
+\end_layout
+
+\begin_layout Plain Layout
+
+	word_object *current_object;
+\end_layout
+
+\begin_layout Plain Layout
+
+    fprintf(stderr, "Print Thread Starting
+\backslash
+n");
+\end_layout
+
+\begin_layout Plain Layout
+
+    while(1){                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			pthread_mutex_lock(&list_lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+  	 	 while(list_head == NULL){                         
+\end_layout
+
+\begin_layout Plain Layout
+
+				pthread_cond_wait(&list_data_ready, &list_lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+			}   
+\end_layout
+
+\begin_layout Plain Layout
+
+            current_object = list_get_first();
+\end_layout
+
+\begin_layout Plain Layout
+
+            pthread_mutex_unlock(&list_lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+            printf("Print Thread: %s
+\backslash
+n",current_object->word);
+\end_layout
+
+\begin_layout Plain Layout
+
+			free(current_object->word);                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			free(current_object);
+\end_layout
+
+\begin_layout Plain Layout
+
+            pthread_cond_signal(&list_data_flush);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }        
+\end_layout
+
+\begin_layout Plain Layout
+
+	return arg;
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It also consists of a 'flushing' mechanism where any additional strings
+ that have been inputted into the application are freed.
+ No output is generated from this and it is executed at the end of the program
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+static void list_flush(void){
+\end_layout
+
+\begin_layout Plain Layout
+
+		pthread_mutex_lock(&list_lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+		while (list_head != NULL){                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			pthread_cond_signal(&list_data_ready);                			pthread_cond_wait(&l
+ist_data_flush, &list_lock);         
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+       pthread_mutex_unlock(&list_lock); 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Without the flushing mechanism, the program exists prematurely without printing
+ the input strings
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+init_user@gentoo-usb ~/thread $ ./hello_world -c 3 
+\end_layout
+
+\begin_layout Plain Layout
+
+Accepting 3 input strings 
+\end_layout
+
+\begin_layout Plain Layout
+
+Print Thread Starting 
+\end_layout
+
+\begin_layout Plain Layout
+
+one two three four 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+With the flushing mechanism the terminal output becomes
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+init_user@gentoo-usb ~/thread $ ./hello_world -c 3 
+\end_layout
+
+\begin_layout Plain Layout
+
+Accepting 3 input strings 
+\end_layout
+
+\begin_layout Plain Layout
+
+Print Thread Starting 
+\end_layout
+
+\begin_layout Plain Layout
+
+one two three four
+\end_layout
+
+\begin_layout Plain Layout
+
+Print Thread: one 
+\end_layout
+
+\begin_layout Plain Layout
+
+Print Thread: two 
+\end_layout
+
+\begin_layout Plain Layout
+
+Print Thread: three
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The code for the user to input the strings into the application has not
+ been altered except the 'list_flush' function is executed at the end of
+ the program.
+ 
+\end_layout
+
+\begin_layout Section
+First Part of Project
+\end_layout
+
+\begin_layout Subsection
+Introduction
+\end_layout
+
+\begin_layout Standard
+The requirement for the first half of the project is to complete a Modbus
+ client thread.
+ The application is to connect to a modbus server using Modbus/IP located
+ at 140.159.153.159 operating on port 502.
+ The server is configured with three address registers starting at address
+ 0.
+ These are loaded with a random integer changing once every seconds.
+ The modbus component is implemented using 'libmodbus' functions.
+\end_layout
+
+\begin_layout Subsection
+Libraries Used in Application
+\end_layout
+
+\begin_layout Standard
+The headers files used for this application are
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <modbus-tcp.h> 
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <errno.h> 
+\end_layout
+
+\end_inset
+
+<stdio.h> contains the commands used for printing the output to the user
+ via the terminal.
+ The error messages are printed to the standard error stream (stderr) and
+ the random numbers obtained from the server are printed on the standard
+ output stream (stdout).
+\end_layout
+
+\begin_layout Standard
+\noindent
+<modbus-tcp.h> contains the functions used to intialise the modbus structure,
+ connect to the server, read the registers from the server and close and
+ free the connection
+\end_layout
+
+\begin_layout Standard
+\noindent
+<errno.h> defines the integer variable errno which is set by system calls
+ and some library functions in the event of an error in the event something
+ goes wrong.
+ For this application this commands will report back to the user if there
+ is a problem with the connecting to the server or reading the register.
+ 
+\end_layout
+
+\begin_layout Subsection
+Defining the Server Address and Port
+\end_layout
+
+\begin_layout Standard
+As the server IP address and port number is fixed, these are defined at
+ the start of the program to keep the code tidy
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#define SERVER_ADDR "140.159.153.159" 
+\end_layout
+
+\begin_layout Plain Layout
+
+#define SERVER_PORT 502
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Initialising the Modbus Structure and Connecting to the Server
+\end_layout
+
+\begin_layout Standard
+To communicate with the Modbus server, a modbus_t structure was created
+ with the IP address and port of the server.
+ This allows the client (the system that this application is running on)
+ to establish a connection to the server.
+ If the connection is successful 
+\begin_inset Quotes eld
+\end_inset
+
+Libmobus Context Created
+\begin_inset Quotes erd
+\end_inset
+
+ will be printed at the terminal.
+ If there are any problems in creating the context then the user will be
+ notified with an error message
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+/*Initialise Modbus Structure*/ 
+\end_layout
+
+\begin_layout Plain Layout
+
+modbus_t *ctx;         
+\end_layout
+
+\begin_layout Plain Layout
+
+	ctx = modbus_new_tcp(SERVER_ADDR, SERVER_PORT);         
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (ctx == NULL){                 
+\end_layout
+
+\begin_layout Plain Layout
+
+		fprintf(stderr, "Unable to allocate libmodbus context
+\backslash
+n"); //Error message if unable to execute 		command 
+\end_layout
+
+\begin_layout Plain Layout
+
+		return -1;         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	if (modbus_connect(ctx) == -1) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		fprintf(stderr, "Connection failed: %s
+\backslash
+n", modbus_strerror(errno));                 		modbus_free(ctx);       
+          
+\end_layout
+
+\begin_layout Plain Layout
+
+		return -1;         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}         
+\end_layout
+
+\begin_layout Plain Layout
+
+	else{                 
+\end_layout
+
+\begin_layout Plain Layout
+
+		fprintf(stderr, "Libmodbus Context Created
+\backslash
+n");         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 	if (modbus_connect(ctx) == -1) {                        
+\end_layout
+
+\begin_layout Plain Layout
+
+		fprintf(stderr, "Connection failed: %s
+\backslash
+n", modbus_strerror(errno));                        		modbus_free(ctx);
+                         
+\end_layout
+
+\begin_layout Plain Layout
+
+		return -1;                                                        }
+\end_layout
+
+\begin_layout Plain Layout
+
+	else{                 
+\end_layout
+
+\begin_layout Plain Layout
+
+		fprintf(stderr, "Connection Successful
+\backslash
+n");         
+\end_layout
+
+\begin_layout Plain Layout
+
+	} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Reading the Registers
+\end_layout
+
+\begin_layout Standard
+Once the connection has been succesfully established the modbus_read_registers
+ command is executed.
+ This command passes in the modbus_t structure, a NULL value for the address
+ of the remote device as it is the device the application is running on,
+ the number of holding registers to read in (3 in this case) and the location
+ to store the registers (an unsigned 16-bit integer with 64 bytes of memory
+ allocated).
+ The function returns the number of read registers
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+/*Read Registers*/         
+\end_layout
+
+\begin_layout Plain Layout
+
+	rc = modbus_read_registers(ctx, 0, 3,tab_reg);                 
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (rc == -1) {                         
+\end_layout
+
+\begin_layout Plain Layout
+
+		fprintf(stderr, "Read Register Failed: %s
+\backslash
+n", modbus_strerror(errno));                         		return -1;      
+           
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (i=0; i < rc; i++) {                         
+\end_layout
+
+\begin_layout Plain Layout
+
+		printf("reg[%d]=%d (0x%X)
+\backslash
+n", i, tab_reg[i], tab_reg[i]);                 
+\end_layout
+
+\begin_layout Plain Layout
+
+	} 
+\end_layout
+
+\begin_layout Plain Layout
+
+/*Close and Free Connection*/         
+\end_layout
+
+\begin_layout Plain Layout
+
+modbus_close(ctx);         
+\end_layout
+
+\begin_layout Plain Layout
+
+modbus_free(ctx); 
+\end_layout
+
+\begin_layout Plain Layout
+
+return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
